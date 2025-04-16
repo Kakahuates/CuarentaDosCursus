@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -20,23 +21,56 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	d = (unsigned char *) dest;
 	s = (const unsigned char *) src;
-	if (d < s)
+	i = 0;
+	if (!dest && !src)
+		return (0);
+	if (d > s)
 	{
-		i = 0;
+		while (n--)
+			d[n] = s[n];
+	}
+	else
+	{
 		while (i < n)
 		{
-			d[i] = s [i];
-			i++;
-		}
-	}
-	else if (d > s)
-	{
-		i = n;
-		while (i > 0)
-		{
 			d[i - 1] = s[i - 1];
-			i--;
+			i++;
 		}
 	}
 	return (dest);
 }
+
+int main() {
+    // Prueba 1: Superposición (destino comienza dentro de origen)
+    unsigned char arr1[] = {1, 2, 3, 4, 5};
+    printf("Prueba 1 (Original antes): [");
+    for (size_t i = 0; i < sizeof(arr1); i++) printf("%d%s", arr1[i], (i < sizeof(arr1) - 1) ? ", " : "");
+    printf("]\n");
+
+    ft_memmove(arr1 + 2, arr1, 3); // Destino desde índice 2, copia desde el inicio
+
+    printf("Prueba 1 (Después): [");
+    for (size_t i = 0; i < sizeof(arr1); i++) printf("%d%s", arr1[i], (i < sizeof(arr1) - 1) ? ", " : "");
+    printf("]\n\n");
+
+    // Prueba 2: No superposición (destino antes de origen)
+    unsigned char arr2[] = {60, 70, 80};
+    unsigned char dest2[3];
+    printf("Prueba 2 (Original): [");
+    for (size_t i = 0; i < sizeof(arr2); i++) printf("%d%s", arr2[i], (i < sizeof(arr2) - 1) ? ", " : "");
+    printf("]\n");
+    printf("Prueba 2 (Destino antes): [");
+    for (size_t i = 0; i < sizeof(dest2); i++) printf("%d%s", dest2[i], (i < sizeof(dest2) - 1) ? ", " : "");
+    printf("]\n");
+
+    ft_memmove(dest2, arr2, sizeof(arr2));
+
+    printf("Prueba 2 (Destino después): [");
+    for (size_t i = 0; i < sizeof(dest2); i++) printf("%d%s", dest2[i], (i < sizeof(dest2) - 1) ? ", " : "");
+    printf("]\n");
+
+    return 0;
+}
+
+//memory move, copy a block memory to one location to another, eventhough if both block memories overlap.
+//memmove() it's much safer then memcpy.
