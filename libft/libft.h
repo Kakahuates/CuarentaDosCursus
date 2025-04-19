@@ -13,6 +13,7 @@
 #ifndef LIBFT_H
 #define LIBFT_H
 #include <unistd.h>
+#include <string.h>
 
 int		ft_isalpha(unsigned char c);
 int		ft_isdigit(int c);
