@@ -13,23 +13,26 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void ejecutar_prueba(const char *entrada, int esperado, int numero_prueba) {
-    int resultado = atoi(entrada);
-    if (resultado == esperado) {
-        printf("Prueba %d: PASADA (Entrada: \"%s\", Resultado: %d)\n", \
-		numero_prueba, entrada, resultado);
-    } else {
-        printf("Prueba %d: FALLIDA (Entrada: \"%s\", Esperado: %d, \
-		Resultado: %d)\n", numero_prueba, entrada, esperado, resultado);
-    }
+int	ft_atoi(const char *nptr)
+{
+	return (0);
 }
 
-int main() {
-    ejecutar_prueba("--+--123", 0, 1);
-    ejecutar_prueba("-987", -987, 2);
-    ejecutar_prueba("   42   ", 42, 3);
-    ejecutar_prueba("abc123", 0, 4);
-    ejecutar_prueba("123xyz12", 123, 5);
-
-    return 0;
+int	main(void)
+{
+	const char	*num_text = "++--++----99";
+	int			num_convert;
+	
+	num_convert = atoi(num_text);
+	printf("El texto es: \"%s\"\n", num_text);
+	printf("El texto convertido a numero es: %d\n", num_convert);
+	/*if (num_convert == -99)
+		printf("conversion exitosa!\n");
+	else
+		printf("Hubo un problema\n");*/
+	return (0);
 }
+
+//The  atoi()  function converts the initial portion of the string pointed to by
+//nptr to int.  The behavior is the same as
+ 
