@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	d = (unsigned char *) dst;
 	s = (const unsigned char *)src;
-	if (!dst && !src)
+	if (!dst || !src)
 		return (0);
 	while (n > 0)
 	{
@@ -30,10 +30,10 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-/*
+/* 
 int	main(void)
 {
-	char	source[] = "123456";
+	char	*source = NULL;
 	size_t	num;
 	char	destination[num + 1];
 
@@ -42,4 +42,4 @@ int	main(void)
 	destination[num] = '\0';
 	printf("cadena de numeros copiada: %s\n", destination);
 	return (0);
-}*/
+} */

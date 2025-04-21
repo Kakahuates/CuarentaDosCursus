@@ -10,29 +10,74 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
+//#include <stdlib.h>
+
+/* static void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+static int	ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return (0);
+	}
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+	if (nb > 9)
+		ft_putnbr(nb / 10);
+	ft_putchar(nb % 10 + '0');
+} */
 
 int	ft_atoi(const char *nptr)
 {
-	return (0);
-}
+	int	i;
+	int	sign;
+	int	result;
 
+	i = 0;
+	sign = 1;
+	result = 0;
+	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
+		i++;
+	if (nptr[i] == '+' || nptr[i] == '-')
+	{
+		if (nptr[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		result = result * 10 + (nptr[i] - '0');
+		i++;
+	}
+	return (result * sign);
+}
+/* 
 int	main(void)
 {
-	const char	*num_text = "++--++----99";
+	const char	*num_text = " \n+99";
 	int			num_convert;
 	
-	num_convert = atoi(num_text);
-	printf("El texto es: \"%s\"\n", num_text);
-	printf("El texto convertido a numero es: %d\n", num_convert);
-	/*if (num_convert == -99)
-		printf("conversion exitosa!\n");
-	else
-		printf("Hubo un problema\n");*/
+	//num_convert = atoi(num_text);
+	ft_putnbr(ft_atoi(num_text));
+	ft_putchar('\n');
+	
+	//printf("El texto es: \"%s\"\n", num_text);
+	//printf("El texto convertido a numero es: %d\n", num_convert);
+	//if (num_convert == -99)
+	//	printf("conversion exitosa!\n");
+	//else
+	//	printf("Hubo un problema\n");
 	return (0);
 }
+*/
 
 //The  atoi()  function converts the initial portion of the string pointed to by
-//nptr to int.  The behavior is the same as
- 
+//nptr to int. 

@@ -12,6 +12,7 @@
 
 #include "libft.h"
 //#include <stdio.h>
+//#include <string.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -22,8 +23,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	d = (unsigned char *) dest;
 	s = (const unsigned char *) src;
 	i = 0;
-	if (!dest && !src)
-		return (0);
 	if (d > s)
 	{
 		while (n--)
@@ -39,19 +38,21 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-/*
-int main() {
+
+/* int main() {
     // Prueba 1: Superposición (destino comienza dentro de origen)
-    unsigned char arr1[] = {1, 2, 3, 4, 5};
+    //unsigned char arr1[] = {1, 2, 3, 4, 5};
+	unsigned char *arr1 = 0;
     printf("Prueba 1 (Original antes): ");
-    printf("%d, %d, %d, %d, %d", arr1[0], arr1[1], arr1[2], arr1[3], arr1[4]);
+    //printf("%d, %d, %d, %d, %d", arr1[0], arr1[1], arr1[2], arr1[3], arr1[4]);
     printf("\n");
 
-    ft_memmove(arr1 + 2, arr1, 3); // Destino desde índice 2, \
-	copia desde el inicio
-
+	char *dest = 0;// arr1 + 2;
+    //ft_memmove(dest, arr1, 3); // Destino desde índice 2, 
+	memmove(dest, arr1, 3);
+	
     printf("Prueba 1 (Después): ");
-    printf("%d, %d, %d, %d, %d", arr1[0], arr1[1], arr1[2], arr1[3], arr1[4]);
+    //printf("%d, %d, %d, %d, %d", arr1[0], arr1[1], arr1[2], arr1[3], arr1[4]);
     printf("\n\n");
 
     // Prueba 2: No superposición (destino antes de origen)
@@ -71,8 +72,8 @@ int main() {
     printf("\n");
 
     return 0;
-}
-*/
-//memory move, copy a block memory to one location to another, \
-eventhough if both block memories overlap.
+} */
+
+//memory move, copy a block memory to one location to another,
+//eventhough if both block memories overlap.
 //memmove() it's much safer then memcpy.

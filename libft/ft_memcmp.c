@@ -19,6 +19,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*p_s2;
 	size_t			i;
 
+	if (!s1 || !s2)
+		return (0);
 	i = 0;
 	p_s1 = (unsigned char *)s1;
 	p_s2 = (unsigned char *)s2;
@@ -32,11 +34,11 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-/*
+/* 
 int	main(void)
 {
 	int		result;
-	char	text1[] = "abc";
+	char	*text1 = NULL;
 	char	text2[] = "abc";
 	char	text3[] = "abf";
 
@@ -76,7 +78,7 @@ int	main(void)
 
     return (0);
 
-}*/
+} */
 
 //Compare byte string, compare the (n) bytes of the memory areas s1 and s2. 
 //Return an int less, equal or greater than 0 if s1 is, respectively, 
