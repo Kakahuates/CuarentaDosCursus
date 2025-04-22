@@ -1,30 +1,32 @@
-#Nombre del archivo de la biblioteca, en este caso es el nombre de la libreria estatica ya que termina con .a
+#Name of the library file, in this case it is the name of the static library since it ends with .a
 NAME = libft.a
 
-#Compinador y banderas de compilacion a usar
+#Compiler and compilation flags to use
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-#archivo de encabezado, facilitar la referencia al archivo de encabezado y hace makefile mas flexible y mantenible
+#Header file, facilitates referencing the header file and makes the makefile more flexible and maintainable
 INCLUDE = libft.h
 
-#Crear biblitecas (AR -> archivero para crear biblitecas en UNIX estaticas y dinamicas, prinicipalmente estaticos)
+#Create libraries (AR -> archiver for creating static and dynamic libraries in UNIX, mainly static)
 AR = ar
 
-#Contiene las opciones del comando rcs -> replace/insert, create, symbol table, crear o estualizar la libreria estatica
+#Contains the options for the rcs command -> replace/insert, create, symbol table, create or update the static library
 ARFLAGS = rcs
 
-#Archivos fuente .c
+#Source files .c
 SRC = 	$(wildcard *.c)
 
-#Archivos objeto
+#Object files
 OBJ = $(SRC:.c=.o)
 
-#Eliminar archivos
+#Remove files
 RM = rm -f
 
 .PHONY: all clean fclean re
 
+#Rules. Targets : dependencies
+#                Commands
 all: $(NAME)
 
 $(NAME): $(OBJ)

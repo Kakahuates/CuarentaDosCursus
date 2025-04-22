@@ -22,17 +22,20 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	d = (unsigned char *) dest;
 	s = (const unsigned char *) src;
-	i = 0;
 	if (d > s)
 	{
-		while (n--)
+		while (n > 0)
+		{
+			n--;
 			d[n] = s[n];
+		}
 	}
-	else
+	else if (d < s)
 	{
+		i = 0;
 		while (i < n)
 		{
-			d[i - 1] = s[i - 1];
+			d[i] = s[i];
 			i++;
 		}
 	}
@@ -40,37 +43,35 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 }
 
 /* int main() {
-    // Prueba 1: Superposición (destino comienza dentro de origen)
-    //unsigned char arr1[] = {1, 2, 3, 4, 5};
-	unsigned char *arr1 = 0;
-    printf("Prueba 1 (Original antes): ");
-    //printf("%d, %d, %d, %d, %d", arr1[0], arr1[1], arr1[2], arr1[3], arr1[4]);
-    printf("\n");
+    char src[] = "ejemplo";
+    char dest1[20] = "abcdefghi";
+    char dest2[20] = "abcdefghi";
 
-	char *dest = 0;// arr1 + 2;
-    //ft_memmove(dest, arr1, 3); // Destino desde índice 2, 
-	memmove(dest, arr1, 3);
-	
-    printf("Prueba 1 (Después): ");
-    //printf("%d, %d, %d, %d, %d", arr1[0], arr1[1], arr1[2], arr1[3], arr1[4]);
-    printf("\n\n");
+    // Prueba 1:
+    printf("Antes de memmove (solapamiento hacia adelante):\n");
+    printf("src: %s\n", src);
+    printf("dest1: %s\n", dest1);
+	//mio
+	ft_memmove(dest1 + 2, src, 7);
+	printf("\nDespués de ft_memmove (solapamiento hacia adelante):\n");
+	printf("dest1: %s\n", dest1);
+	//original
+	memmove(dest1 + 2, src, 7);
+    printf("\nDespués de memmove (solapamiento hacia adelante):\n");
+    printf("dest1: %s\n", dest1);
 
-    // Prueba 2: No superposición (destino antes de origen)
-    unsigned char arr2[] = {60, 70, 80};
-    unsigned char dest2[3];
-    printf("Prueba 2 (Original): ");
-    printf("%d, %d, %d", arr2[0], arr2[1], arr2[2]);
-    printf("\n");
-    printf("Prueba 2 (Destino antes): ");
-    printf("%d, %d, %d", arr2[0], arr2[1], arr2[2]);
-    printf("\n");
-
-    ft_memmove(dest2, arr2, sizeof(arr2));
-
-    printf("Prueba 2 (Destino después): ");
-    printf("%d, %d, %d", arr2[0], arr2[1], arr2[2]);
-    printf("\n");
-
+	// Prueba 2:
+	printf("\nAntes de memmove (solapamiento hacia atrás):\n");
+    printf("src: %s\n", src);
+    printf("dest2: %s\n", dest2);
+	//mio
+	ft_memmove(dest2, src + 2, 7);
+	printf("\nDespués de ft_memmove (solapamiento hacia atrás):\n");
+	printf("dest2: %s\n", dest2);
+	//original
+	memmove(dest2, src + 2, 7);
+    printf("\nDespués de memmove (solapamiento hacia atrás):\n");
+    printf("dest2: %s\n", dest2);
     return 0;
 } */
 
