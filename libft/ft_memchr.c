@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksanchez <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kakahuate <kakahuate@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:08:20 by ksanchez          #+#    #+#             */
-/*   Updated: 2025/04/15 15:08:22 by ksanchez         ###   ########.fr       */
+/*   Updated: 2025/04/25 14:49:35 by kakahuate        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ int	main(void)
 	byte_find = (unsigned char)to_find;
 	ptr_result = ft_memchr(arr, byte_find, sizeof(arr));
 	if (ptr_result != NULL)
-		printf("El character encontrado \
-				 en la direccion:  %p\n", ptr_result);
+		printf("El character encontrado
+		en la direccion:  %p\n", ptr_result);
 	else
 		printf("No ha encontrado ocurrencias");
 }*/

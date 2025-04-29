@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksanchez <ksanchez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kakahuate <kakahuate@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:46:28 by ksanchez          #+#    #+#             */
-/*   Updated: 2025/04/23 15:08:26 by ksanchez         ###   ########.fr       */
+/*   Updated: 2025/04/25 14:21:44 by kakahuate        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	{
 		return (NULL);
 	}
-	ft_memset(ptr_mem, 0, totalsize);
+	ft_bzero(ptr_mem, totalsize);
 	return (ptr_mem);
 }
 /* #include <stdio.h>

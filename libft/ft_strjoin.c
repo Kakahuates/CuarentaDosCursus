@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kakahuate <kakahuate@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 12:48:40 by ksanchez          #+#    #+#             */
-/*   Updated: 2025/04/26 21:10:00 by kakahuate        ###   ########.fr       */
+/*   Created: 2025/04/26 17:31:32 by kakahuate         #+#    #+#             */
+/*   Updated: 2025/04/26 21:06:44 by kakahuate        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	size_t	src_len;
+	size_t	total_len;
+	char	*full_str;
 
-	src_len = ft_strlen(src);
-	i = 0;
-	if (n == 0)
-	{
-		return (src_len);
-	}
-	while (i < n - 1 && src[i] != '\0')
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (src_len);
+	if (!s1 || !s2)
+		return (NULL);
+	total_len = ft_strlen(s1) + ft_strlen(s2);
+	full_str = (char *)malloc(sizeof(char) * (total_len + 1));
+	if (!full_str)
+		return (NULL);
+	ft_strlcpy(full_str, s1, total_len + 1);
+	ft_strlcat(full_str, s2, total_len + 1);
+	return (full_str);
 }
