@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksanchez <ksanchez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 16:27:50 by ksanchez          #+#    #+#             */
-/*   Updated: 2025/05/01 12:57:01 by ksanchez         ###   ########.fr       */
+/*   Created: 2025/05/01 13:35:36 by ksanchez          #+#    #+#             */
+/*   Updated: 2025/05/01 14:00:28 by ksanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int	i;
-	int	sign;
-	int	result;
+	unsigned int	i;
 
 	i = 0;
-	sign = 1;
-	result = 0;
-	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
-		i++;
-	if (nptr[i] == '+' || nptr[i] == '-')
+	if (!s || !f)
+		return ;
+	while (s[i] != '\0')
 	{
-		if (nptr[i] == '-')
-			sign = -1;
+		f(i, &s[i]);
 		i++;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		result = result * 10 + (nptr[i] - '0');
-		i++;
-	}
-	return (result * sign);
 }
-
-//The  atoi()  function converts the initial portion of the string pointed to by
-//nptr to int. 
