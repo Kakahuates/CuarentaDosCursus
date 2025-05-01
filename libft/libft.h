@@ -6,7 +6,7 @@
 /*   By: kakahuate <kakahuate@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 09:11:41 by ksanchez          #+#    #+#             */
-/*   Updated: 2025/04/29 12:11:43 by kakahuate        ###   ########.fr       */
+/*   Updated: 2025/04/29 16:44:44 by kakahuate        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ char	*ft_strdup(const char *s);
 char	*ft_substr(const char *s, unsigned int start, size_t length);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(const char *s, char c);
 
 #endif
