@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksanchez <ksanchez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kakahuate <kakahuate@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 09:11:41 by ksanchez          #+#    #+#             */
-/*   Updated: 2025/05/01 15:02:26 by ksanchez         ###   ########.fr       */
+/*   Updated: 2025/05/01 20:31:28 by kakahuate        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -50,5 +51,13 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+typedef struct  s_list
+{
+    void            *content;
+    struct s_list   *next;
+}                   t_list;
+
+t_list  *ft_lstnew(void *content);
 
 #endif

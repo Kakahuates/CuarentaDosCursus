@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksanchez <ksanchez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kakahuate <kakahuate@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:02:12 by ksanchez          #+#    #+#             */
-/*   Updated: 2025/05/01 15:07:32 by ksanchez         ###   ########.fr       */
+/*   Updated: 2025/05/01 19:06:45 by kakahuate        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ char	*ft_itoa(int n)
 	size_t	length;
 	long	number;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
 	number = n;
 	length = ft_countdigits(n);
 	str = (char *)malloc(length + 1);
