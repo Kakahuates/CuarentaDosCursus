@@ -6,7 +6,7 @@
 /*   By: kakahuate <kakahuate@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 09:11:41 by ksanchez          #+#    #+#             */
-/*   Updated: 2025/05/01 20:31:28 by kakahuate        ###   ########.fr       */
+/*   Updated: 2025/05/04 10:34:12 by kakahuate        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,8 @@ typedef struct  s_list
 }                   t_list;
 
 t_list  *ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int	    ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
 
 #endif
