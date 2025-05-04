@@ -6,7 +6,7 @@
 #    By: kakahuate <kakahuate@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 19:55:25 by kakahuate         #+#    #+#              #
-#    Updated: 2025/05/01 21:20:58 by kakahuate        ###   ########.fr        #
+#    Updated: 2025/05/04 15:47:32 by kakahuate        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,11 @@ SRC = 	ft_isalpha.c	\
 		ft_putnbr_fd.c	\
 
 #Declare bonus files
-BONUS_SRC = ft_lstnew.c
+BONUS_SRC = ft_lstnew.c			\
+			ft_lstadd_front.c	\
+			ft_lstsize.c		\
+			*ft_lstlast.c		\
+			ft_lstadd_back		\
 
 #Object files
 OBJ = $(SRC:.c=.o)
