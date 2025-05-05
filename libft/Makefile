@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kakahuate <kakahuate@student.42.fr>        +#+  +:+       +#+         #
+#    By: ksanchez <ksanchez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 19:55:25 by kakahuate         #+#    #+#              #
-#    Updated: 2025/05/04 15:47:32 by kakahuate        ###   ########.fr        #
+#    Updated: 2025/05/05 15:06:56 by ksanchez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,11 +63,15 @@ SRC = 	ft_isalpha.c	\
 		ft_putnbr_fd.c	\
 
 #Declare bonus files
-BONUS_SRC = ft_lstnew.c			\
-			ft_lstadd_front.c	\
-			ft_lstsize.c		\
-			*ft_lstlast.c		\
-			ft_lstadd_back		\
+BONUS_SRC = ft_lstnew_bonus.c		\
+			ft_lstadd_front_bonus.c	\
+			ft_lstsize_bonus.c		\
+			ft_lstlast_bonus.c		\
+			ft_lstadd_back_bonus.c	\
+			ft_lstdelone_bonus.c	\
+			ft_lstclear_bonus.c		\
+			ft_lstiter_bonus.c		\
+			ft_lstmap_bonus.c		\
 
 #Object files
 OBJ = $(SRC:.c=.o)
@@ -85,7 +89,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 		$(AR) $(ARFLAGS) $@ $^
 
-bonus: $(OBJ_BONUS)
+bonus: all $(OBJ_BONUS)
 		$(AR) $(ARFLAGS) $(NAME) $(OBJ_BONUS)
 
 %.o: %.c $(INCLUDE)

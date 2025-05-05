@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksanchez <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ksanchez <ksanchez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 14:18:27 by ksanchez          #+#    #+#             */
-/*   Updated: 2025/04/15 14:19:32 by ksanchez         ###   ########.fr       */
+/*   Updated: 2025/05/05 11:33:59 by ksanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -41,12 +40,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-
-/* int	main(void)
-{
-	char	s1[] = "abcdefgh";
-	char	s2[] = "abcdwxyz";
-
-	printf("%d\n", ft_strncmp(s1, s2, 4));
-	return (0);
-} */

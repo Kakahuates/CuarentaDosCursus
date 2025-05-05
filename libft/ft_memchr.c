@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kakahuate <kakahuate@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ksanchez <ksanchez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:08:20 by ksanchez          #+#    #+#             */
-/*   Updated: 2025/04/25 14:49:35 by kakahuate        ###   ########.fr       */
+/*   Updated: 2025/05/05 10:55:29 by ksanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -30,20 +29,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-/*
-int	main(void)
-{
-	unsigned char	byte_find;
-	int				to_find;
-	char			arr[] = {1, 2, 3, 4, 5, 6};
-	void			*ptr_result;
-
-	to_find = 3;
-	byte_find = (unsigned char)to_find;
-	ptr_result = ft_memchr(arr, byte_find, sizeof(arr));
-	if (ptr_result != NULL)
-		printf("El character encontrado
-		en la direccion:  %p\n", ptr_result);
-	else
-		printf("No ha encontrado ocurrencias");
-}*/

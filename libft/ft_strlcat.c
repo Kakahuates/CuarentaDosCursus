@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kakahuate <kakahuate@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ksanchez <ksanchez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 10:22:39 by ksanchez          #+#    #+#             */
-/*   Updated: 2025/04/26 21:30:59 by kakahuate        ###   ########.fr       */
+/*   Updated: 2025/05/05 10:54:20 by ksanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t n)
 {
@@ -39,16 +38,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n)
 	}
 	return (len_dst + len_src);
 }
-/*
-int	main(void)
-{
-	char	src[] = "holaLoco";
-	char	dst[] = "Mundo";
-	int		max_size;
-	size_t	length;
-
-	max_size = 0;
-	length = ft_strlcat(dst, src, max_size);
-	printf("%zu", length);
-	return (0);
-}*/

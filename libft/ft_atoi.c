@@ -6,7 +6,7 @@
 /*   By: ksanchez <ksanchez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 16:27:50 by ksanchez          #+#    #+#             */
-/*   Updated: 2025/05/01 12:57:01 by ksanchez         ###   ########.fr       */
+/*   Updated: 2025/05/05 11:34:06 by ksanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * sign);
 }
-
-//The  atoi()  function converts the initial portion of the string pointed to by
-//nptr to int. 
